@@ -1,6 +1,6 @@
 mod file_handling;
 
-mod prelude {
+pub mod prelude {
     use crate::file_handling;
     pub use file_handling::get_file_as_byte_vec;
     pub use file_handling::FileErrors;
