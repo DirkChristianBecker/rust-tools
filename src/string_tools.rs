@@ -1,5 +1,8 @@
 
-
+/// Turns a name in camel case to snake case.
+/// Removes a leading m_ from the name if it encounters it.
+/// m_ is often used to mark fields as members. However, this 
+/// terminology does not fit to rust. 
 pub fn camel_case_to_snake_case(input : &str) -> String {
     let mut r = String::from("");
     let mut tmp = input.to_string();
