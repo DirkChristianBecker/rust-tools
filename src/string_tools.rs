@@ -30,9 +30,23 @@ pub fn camel_case_to_snake_case(input : &str) -> String {
     r    
 }
 
+/// Capitalizes the first letter of the given string.
+/// If the given string is empty an empty string will be returned.
+/// If the first letter of the string is already capitalized this 
+/// method does nothing.
+pub fn capitalize_first_letter(s: &str) -> String {
+    let mut c = s.chars();
+    match c.next() {
+        None => String::new(),
+        Some(f) => f.to_uppercase().collect::<String>() + c.as_str(),
+    }
+}
+
 #[cfg(test)]
 mod tests {
-    use super::camel_case_to_snake_case;
+    use std::collections::HashMap;
+
+    use super::*;
 
     #[test]
     fn test_camel_case_to_snake_case() {
@@ -42,5 +56,19 @@ mod tests {
         assert_eq!(camel_case_to_snake_case("m_PrefabInstance"), "prefab_instance");
         assert_eq!(camel_case_to_snake_case("stringTagMap"), "string_tag_map");
         assert_eq!(camel_case_to_snake_case("disabledShaderPasses"), "disabled_shader_passes");
+    }
+
+    #[test]
+    fn test_capitalize_first_letter() {
+        let mut tests : HashMap<&str, &str> = HashMap::new();
+        tests.insert("test", "Test"); 
+        tests.insert("Test", "Test");
+        tests.insert("1test", "1test");
+        tests.insert(" test", " test");
+        tests.insert("_test", "_test");
+
+        for (t, r) in tests {
+            assert_eq!(capitalize_first_letter(t), r);
+        }
     }
 }
