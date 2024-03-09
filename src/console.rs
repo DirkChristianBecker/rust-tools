@@ -16,12 +16,14 @@ pub struct Console;
 /// println!("{} This text is printed bold.", Console::BOLD);
 /// println!("{} This text is underlined.", Console::UNDERLINE);
 /// println!("{} This text is printed in white.", Console::WHITE);
+///
+/// println!("{} This text is printed with standard settings.", Console::RESET);
 /// ```
 impl Console {
     pub const FAIL          : &'static str = "\x1b[91m";
     pub const RED           : &'static str = "\x1b[91m";
 
-    pub const WHITE          : &'static str = "\x1b[95m";
+    pub const WHITE          : &'static str = "\x1b[97m";
 
     pub const WARNING       : &'static str = "\x1b[93m";
     pub const YELLOW        : &'static str = "\x1b[93m";
@@ -30,6 +32,8 @@ impl Console {
     pub const OK_CYAN       : &'static str = "\x1b[96m";
     pub const OK_GREEN      : &'static str = "\x1b[92m";
 
-    pub const BOLD       : &'static str = "\x1b[1m";
-    pub const UNDERLINE  : &'static str = "\x1b[4m";
+    pub const RESET         : &'static str = "\x1b[0m";
+
+    pub const BOLD          : &'static str = "\x1b[1m";
+    pub const UNDERLINE     : &'static str = "\x1b[4m";
 }
