@@ -6,7 +6,9 @@ pub struct Console;
 /// ```rust
 /// use rust_tools::prelude::*;
 /// println!("{} This text is printed in red.", Console::FAIL);
+/// println!("{} This text is printed in red.", Console::RED);
 /// println!("{} This text is printed in yellow.", Console::WARNING);
+/// println!("{} This text is printed in yellow.", Console::YELLOW);
 /// println!("{} This text is printed in blue.", Console::OK_BLUE);
 /// println!("{} This text is printed in cyan.", Console::OK_CYAN);
 /// println!("{} This text is printed in green.", Console::OK_GREEN);
@@ -15,9 +17,11 @@ pub struct Console;
 /// println!("{} This text is underlined.", Console::UNDERLINE);
 /// ```
 impl Console {
-    
     pub const FAIL          : &'static str = "\x1b[91m";
+    pub const RED           : &'static str = "\x1b[91m";
+
     pub const WARNING       : &'static str = "\x1b[93m";
+    pub const YELLOW        : &'static str = "\x1b[93m";
 
     pub const OK_BLUE       : &'static str = "\x1b[94m";
     pub const OK_CYAN       : &'static str = "\x1b[96m";
