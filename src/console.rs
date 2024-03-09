@@ -15,10 +15,13 @@ pub struct Console;
 ///
 /// println!("{} This text is printed bold.", Console::BOLD);
 /// println!("{} This text is underlined.", Console::UNDERLINE);
+/// println!("{} This text is printed in white.", Console::WHITE);
 /// ```
 impl Console {
     pub const FAIL          : &'static str = "\x1b[91m";
     pub const RED           : &'static str = "\x1b[91m";
+
+    pub const WHITE          : &'static str = "\x1b[95m";
 
     pub const WARNING       : &'static str = "\x1b[93m";
     pub const YELLOW        : &'static str = "\x1b[93m";
