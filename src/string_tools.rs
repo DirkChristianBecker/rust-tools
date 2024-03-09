@@ -1,4 +1,3 @@
-
 /// Turns a name in camel case to snake case.
 /// Removes a leading m_ from the name if it encounters it.
 /// m_ is often used to mark fields as members. However, this 
