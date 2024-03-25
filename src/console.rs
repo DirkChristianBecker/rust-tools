@@ -23,7 +23,7 @@ impl Console {
     pub const FAIL          : &'static str = "\x1b[91m";
     pub const RED           : &'static str = "\x1b[91m";
 
-    pub const WHITE          : &'static str = "\x1b[97m";
+    pub const WHITE         : &'static str = "\x1b[97m";
 
     pub const WARNING       : &'static str = "\x1b[93m";
     pub const YELLOW        : &'static str = "\x1b[93m";
